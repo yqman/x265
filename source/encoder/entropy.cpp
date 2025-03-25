@@ -1765,7 +1765,7 @@ void Entropy::codeQtCbfChroma(const CUData& cu, uint32_t absPartIdx, TextType tt
         uint32_t subTUDepth        = lowestTUDepth + 1;   // if this is the lowest level of the TU-tree, the sub-TUs are directly below.
                                                           // Otherwise, this must be the level above the lowest level (as specified above)
         uint32_t tuNumParts = 1 << ((log2TrSize - LOG2_UNIT_SIZE) * 2 - 1);
-
+//m_cbf[ttype][absPartIdx]
         encodeBin(cu.getCbf(absPartIdx             , ttype, subTUDepth), m_contextState[OFF_QT_CBF_CTX + ctx]);
         encodeBin(cu.getCbf(absPartIdx + tuNumParts, ttype, subTUDepth), m_contextState[OFF_QT_CBF_CTX + ctx]);
     }

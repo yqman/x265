@@ -220,9 +220,9 @@ void Search::invalidateContexts(int fromDepth)
     /* catch reads without previous writes */
     for (int d = fromDepth; d < NUM_FULL_DEPTH; d++)
     {
-        m_rqt[d].cur.markInvalid();
-        m_rqt[d].rqtTemp.markInvalid();
-        m_rqt[d].rqtRoot.markInvalid();
+        m_rqt[d].cur.markInvalid();//starting context for current cu  m_valid=false
+        m_rqt[d].rqtTemp.markInvalid();  //temp context
+        m_rqt[d].rqtRoot.markInvalid();  //start context
         m_rqt[d].rqtTest.markInvalid();
     }
 }
@@ -238,7 +238,7 @@ void Search::codeSubdivCbfQTChroma(const CUData& cu, uint32_t tuDepth, uint32_t 
     if (!(log2TrSize - m_hChromaShift < 2))
     {
         uint32_t parentIdx = absPartIdx & (0xFF << (log2TrSize + 1 - LOG2_UNIT_SIZE) * 2);
-        if (!tuDepth || cu.getCbf(parentIdx, TEXT_CHROMA_U, tuDepth - 1))
+        if (!tuDepth || cu.getCbf(parentIdx, TEXT_CHROMA_U, tuDepth - 1))  //text type 1=TEXT_CHROMA_U
             m_entropyCoder.codeQtCbfChroma(cu, absPartIdx, TEXT_CHROMA_U, tuDepth, !subdiv);
         if (!tuDepth || cu.getCbf(parentIdx, TEXT_CHROMA_V, tuDepth - 1))
             m_entropyCoder.codeQtCbfChroma(cu, absPartIdx, TEXT_CHROMA_V, tuDepth, !subdiv);
