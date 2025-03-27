@@ -77,7 +77,7 @@ bool Frame::create(x265_param *param, float* quantOffsets)
         uint32_t widthInCTU = (m_param->sourceWidth + param->maxCUSize - 1) >> m_param->maxLog2CUSize;
         uint32_t heightInCTU = (m_param->sourceHeight +  param->maxCUSize - 1) >> m_param->maxLog2CUSize;
         uint32_t numCTUsInFrame = widthInCTU * heightInCTU;
-        CHECKED_MALLOC_ZERO(m_addOnDepth, uint8_t *, numCTUsInFrame);
+        CHECKED_MALLOC_ZERO(m_addOnDepth, uint8_t *, numCTUsInFrame);  //allocate memory
         CHECKED_MALLOC_ZERO(m_addOnCtuInfo, uint8_t *, numCTUsInFrame);
         CHECKED_MALLOC_ZERO(m_addOnPrevChange, int *, numCTUsInFrame);
         for (uint32_t i = 0; i < numCTUsInFrame; i++)

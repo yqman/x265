@@ -52,7 +52,7 @@ bool FrameData::create(const x265_param& param, const SPS& sps, int csp)
         for (uint32_t ctuAddr = 0; ctuAddr < sps.numCUsInFrame; ctuAddr++)
         {
             if (m_param->bDynamicRefine)
-            {
+            {   //CUData* m_picCTU;
                 m_picCTU[ctuAddr].m_collectCURd = m_cuMemPool.dynRefineRdBlock + (ctuAddr * MAX_NUM_DYN_REFINE);
                 m_picCTU[ctuAddr].m_collectCUVariance = m_cuMemPool.dynRefVarBlock + (ctuAddr * MAX_NUM_DYN_REFINE);
                 m_picCTU[ctuAddr].m_collectCUCount = m_cuMemPool.dynRefCntBlock + (ctuAddr * MAX_NUM_DYN_REFINE);

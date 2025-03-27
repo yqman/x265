@@ -54,7 +54,7 @@ bool Yuv::create(uint32_t size, int csp)
 
     if (csp == X265_CSP_I400)
     {
-        CHECKED_MALLOC(m_buf[0], pixel, size * size + 8);
+        CHECKED_MALLOC(m_buf[0], pixel, size * size + 8); //typdef uint8_t pixel;
         m_buf[1] = m_buf[2] = 0;
         m_csize = 0;
         return true;

@@ -315,7 +315,7 @@ void CUData::initCTU(const Frame& frame, uint32_t cuAddr, int qp, uint32_t first
     m_vbvAffected = false;
 
     uint32_t widthInCU = m_slice->m_sps->numCuInWidth;
-    m_cuLeft = (m_cuAddr % widthInCU) ? m_encData->getPicCTU(m_cuAddr - 1) : NULL;
+    m_cuLeft = (m_cuAddr % widthInCU) ? m_encData->getPicCTU(m_cuAddr - 1) : NULL;  //FrameData m_encData/CUData m_picCTU[m_cuAddr]
     m_cuAbove = (m_cuAddr >= widthInCU) && !m_bFirstRowInSlice ? m_encData->getPicCTU(m_cuAddr - widthInCU) : NULL;
     m_cuAboveLeft = (m_cuLeft && m_cuAbove) ? m_encData->getPicCTU(m_cuAddr - widthInCU - 1) : NULL;
     m_cuAboveRight = (m_cuAbove && ((m_cuAddr % widthInCU) < (widthInCU - 1))) ? m_encData->getPicCTU(m_cuAddr - widthInCU + 1) : NULL;
@@ -357,7 +357,7 @@ void CUData::initSubCU(const CUData& ctu, const CUGeom& cuGeom, int qp)
     m_partSet((uint8_t*)m_refIdx[1], (uint8_t)REF_NOT_VALID);
     m_partSet(m_cuDepth,      (uint8_t)cuGeom.depth);
 
-    /* initialize the remaining CU data in one memset */
+    /* initialize the remaining CU data in one memset   BytesPerPartition=24*/
     memset(m_predMode, 0, (ctu.m_chromaFormat == X265_CSP_I400 ? BytesPerPartition - 13 : BytesPerPartition - 9) * m_numPartitions);
     memset(m_distortion, 0, m_numPartitions * sizeof(sse_t));
 }
@@ -372,7 +372,7 @@ void CUData::copyPartFrom(const CUData& subCU, const CUGeom& childGeom, uint32_t
     m_bFirstRowInSlice = subCU.m_bFirstRowInSlice;
     m_bLastCuInSlice = subCU.m_bLastCuInSlice;
 
-    m_subPartCopy((uint8_t*)m_qp + offset, (uint8_t*)subCU.m_qp);
+    m_subPartCopy((uint8_t*)m_qp + offset, (uint8_t*)subCU.m_qp); //cubcast_t* m_subPartCopy
     m_subPartCopy((uint8_t*)m_qpAnalysis + offset, (uint8_t*)subCU.m_qpAnalysis);
     m_subPartCopy(m_log2CUSize + offset, subCU.m_log2CUSize);
     m_subPartCopy(m_lumaIntraDir + offset, subCU.m_lumaIntraDir);

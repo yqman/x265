@@ -139,7 +139,7 @@ bool Search::initSearch(const x265_param& param, ScalingList& scalingList)
     for (uint32_t i = 0; i <= m_param->maxCUDepth; i++)
     {
         int cuSize = param.maxCUSize >> i;
-        ok &= m_rqt[i].tmpResiYuv.create(cuSize, param.internalCsp);
+        ok &= m_rqt[i].tmpResiYuv.create(cuSize, param.internalCsp);//alloc memory m_buf[3]
         ok &= m_rqt[i].tmpPredYuv.create(cuSize, param.internalCsp);
         ok &= m_rqt[i].bidirPredYuv[0].create(cuSize, param.internalCsp);
         ok &= m_rqt[i].bidirPredYuv[1].create(cuSize, param.internalCsp);
@@ -3876,7 +3876,7 @@ void Search::codeInterSubdivCbfQT(CUData& cu, uint32_t absPartIdx, const uint32_
 
     if (!bSubdiv)
     {
-        m_entropyCoder.codeQtCbfLuma(cu.getCbf(absPartIdx, TEXT_LUMA, tuDepth), tuDepth);
+        m_entropyCoder.codeQtCbfLuma(cu.getCbf(absPartIdx, TEXT_LUMA, tuDepth), tuDepth);//encodeBin
     }
     else
     {
