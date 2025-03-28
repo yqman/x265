@@ -1798,7 +1798,7 @@ sse_t Search::estIntraPredChromaQT(Mode &intraMode, const CUGeom& cuGeom)
         for (uint32_t mode = minMode; mode < maxMode; mode++)
         {
             // restore context models
-            m_entropyCoder.load(m_rqt[depth].cur);
+            m_entropyCoder.load(m_rqt[depth].cur);//Entropy cur;
 
             cu.setChromIntraDirSubParts(modeList[mode], absPartIdxC, depth + initTuDepth);
             Cost outCost;

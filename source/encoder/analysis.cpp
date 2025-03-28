@@ -149,9 +149,10 @@ Mode& Analysis::compressCTU(CUData& ctu, Frame& frame, const CUGeom& cuGeom, con
     int qp = setLambdaFromQP(ctu, m_slice->m_pps->bUseDQP ? calculateQpforCuSize(ctu, cuGeom) : m_slice->m_sliceQp);
     ctu.setQPSubParts((int8_t)qp, 0, 0);
 
-    m_rqt[0].cur.load(initialContext);
+    m_rqt[0].cur.load(initialContext); //Entropy cur;
     ctu.m_meanQP = initialContext.m_meanQP;
-    m_modeDepth[0].fencYuv.copyFromPicYuv(*m_frame->m_fencPic, ctu.m_cuAddr, 0);
+    m_modeDepth[0].fencYuv.copyFromPicYuv(*m_frame->m_fencPic, ctu.m_cuAddr, 0);//ModeDepth m_modeDepth[]
+    //copy to m_buf;
 
     if (m_param->bSsimRd)
         calculateNormFactor(ctu, qp);
@@ -162,7 +163,7 @@ Mode& Analysis::compressCTU(CUData& ctu, Frame& frame, const CUGeom& cuGeom, con
         x265_ctu_info_t* ctuTemp = *m_frame->m_ctuInfo + ctu.m_cuAddr;
         int32_t depthIdx = 0;
         uint32_t maxNum8x8Partitions = 64;
-        uint8_t* depthInfoPtr = m_frame->m_addOnDepth[ctu.m_cuAddr];
+        uint8_t* depthInfoPtr = m_frame->m_addOnDepth[ctu.m_cuAddr];//uint8_t**  m_addOnDepth
         uint8_t* contentInfoPtr = m_frame->m_addOnCtuInfo[ctu.m_cuAddr];
         int* prevCtuInfoChangePtr = m_frame->m_addOnPrevChange[ctu.m_cuAddr];
         do
