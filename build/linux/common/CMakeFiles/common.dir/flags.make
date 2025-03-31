@@ -13,7 +13,7 @@ CXX_DEFINES = -DEXPORT_C_API=1 -DHAVE_INT_TYPES_H=1 -DHAVE_LIBNUMA -DHIGH_BIT_DE
 
 CXX_INCLUDES = -I/home/yqman/projects/x265/source/. -I/home/yqman/projects/x265/source/common -I/home/yqman/projects/x265/source/encoder -I/home/yqman/projects/x265/build/linux
 
-CXX_FLAGS = -O3 -DNDEBUG   -Wall -Wextra -Wshadow -Wno-class-memaccess -std=gnu++98 -fPIC -Wno-array-bounds -ffast-math -mstackrealign -fno-exceptions
+CXX_FLAGS = -g   -Wall -Wextra -Wshadow -Wno-class-memaccess -std=gnu++98 -fPIC -Wno-array-bounds -ffast-math -mstackrealign -fno-exceptions
 
 # Custom flags: common/CMakeFiles/common.dir/vec/dct-sse3.cpp.o_FLAGS = -Wno-unused-parameter -msse3
 
@@ -27,7 +27,7 @@ CXX_FLAGS = -O3 -DNDEBUG   -Wall -Wextra -Wshadow -Wno-class-memaccess -std=gnu+
 
 # Custom flags: common/CMakeFiles/common.dir/cpu.cpp.o_FLAGS = -Wno-narrowing
 
-# Custom flags: common/CMakeFiles/common.dir/version.cpp.o_FLAGS = -DX265_VERSION=3.4+29-0babc4405 -DENABLE_ASSEMBLY=1
+# Custom flags: common/CMakeFiles/common.dir/version.cpp.o_FLAGS = -DX265_VERSION=3.4+33-50fb8f567 -DENABLE_ASSEMBLY=1
 
 # Custom flags: common/CMakeFiles/common.dir/threading.cpp.o_FLAGS = -DENABLE_ASSEMBLY=1
 

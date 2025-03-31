@@ -359,15 +359,15 @@ common/CMakeFiles/common.dir/version.cpp.o: common/CMakeFiles/common.dir/flags.m
 common/CMakeFiles/common.dir/version.cpp.o: /home/yqman/projects/x265/source/common/version.cpp
 common/CMakeFiles/common.dir/version.cpp.o: common/CMakeFiles/common.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yqman/projects/x265/build/linux/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object common/CMakeFiles/common.dir/version.cpp.o"
-	cd /home/yqman/projects/x265/build/linux/common && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -DX265_VERSION=3.4+29-0babc4405 -DENABLE_ASSEMBLY=1 -MD -MT common/CMakeFiles/common.dir/version.cpp.o -MF CMakeFiles/common.dir/version.cpp.o.d -o CMakeFiles/common.dir/version.cpp.o -c /home/yqman/projects/x265/source/common/version.cpp
+	cd /home/yqman/projects/x265/build/linux/common && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -DX265_VERSION=3.4+33-50fb8f567 -DENABLE_ASSEMBLY=1 -MD -MT common/CMakeFiles/common.dir/version.cpp.o -MF CMakeFiles/common.dir/version.cpp.o.d -o CMakeFiles/common.dir/version.cpp.o -c /home/yqman/projects/x265/source/common/version.cpp
 
 common/CMakeFiles/common.dir/version.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/version.cpp.i"
-	cd /home/yqman/projects/x265/build/linux/common && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -DX265_VERSION=3.4+29-0babc4405 -DENABLE_ASSEMBLY=1 -E /home/yqman/projects/x265/source/common/version.cpp > CMakeFiles/common.dir/version.cpp.i
+	cd /home/yqman/projects/x265/build/linux/common && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -DX265_VERSION=3.4+33-50fb8f567 -DENABLE_ASSEMBLY=1 -E /home/yqman/projects/x265/source/common/version.cpp > CMakeFiles/common.dir/version.cpp.i
 
 common/CMakeFiles/common.dir/version.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/version.cpp.s"
-	cd /home/yqman/projects/x265/build/linux/common && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -DX265_VERSION=3.4+29-0babc4405 -DENABLE_ASSEMBLY=1 -S /home/yqman/projects/x265/source/common/version.cpp -o CMakeFiles/common.dir/version.cpp.s
+	cd /home/yqman/projects/x265/build/linux/common && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -DX265_VERSION=3.4+33-50fb8f567 -DENABLE_ASSEMBLY=1 -S /home/yqman/projects/x265/source/common/version.cpp -o CMakeFiles/common.dir/version.cpp.s
 
 common/CMakeFiles/common.dir/threading.cpp.o: common/CMakeFiles/common.dir/flags.make
 common/CMakeFiles/common.dir/threading.cpp.o: /home/yqman/projects/x265/source/common/threading.cpp

@@ -878,7 +878,7 @@ uint32_t Analysis::compressInterCU_dist(const CUData& parentCTU, const CUGeom& c
     if (mightNotSplit && depth >= minDepth)
     {
         /* Initialize all prediction CUs based on parentCTU */
-        md.pred[PRED_MERGE].cu.initSubCU(parentCTU, cuGeom, qp);
+        md.pred[PRED_MERGE].cu.initSubCU(parentCTU, cuGeom, qp);//Mode pred[];
         md.pred[PRED_SKIP].cu.initSubCU(parentCTU, cuGeom, qp);
 
         if (m_param->rdLevel <= 4)

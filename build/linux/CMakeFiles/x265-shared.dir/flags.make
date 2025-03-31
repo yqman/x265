@@ -13,5 +13,5 @@ CXX_DEFINES = -DEXPORT_C_API=1 -DHAVE_INT_TYPES_H=1 -DHAVE_LIBNUMA -DHIGH_BIT_DE
 
 CXX_INCLUDES = -I/home/yqman/projects/x265/source/. -I/home/yqman/projects/x265/source/common -I/home/yqman/projects/x265/source/encoder -I/home/yqman/projects/x265/build/linux
 
-CXX_FLAGS = -O3 -DNDEBUG -fPIC   -Wall -Wextra -Wshadow -Wno-class-memaccess -std=gnu++98 -fPIC -Wno-array-bounds -ffast-math -mstackrealign -fno-exceptions
+CXX_FLAGS = -g -fPIC   -Wall -Wextra -Wshadow -Wno-class-memaccess -std=gnu++98 -fPIC -Wno-array-bounds -ffast-math -mstackrealign -fno-exceptions
 
