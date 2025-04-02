@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -rdynamic -Wl,-Bsymbolic,-znoexecstack CMakeFiles/TestBench.dir/checkasm-a.asm.o CMakeFiles/TestBench.dir/testbench.cpp.o CMakeFiles/TestBench.dir/pixelharness.cpp.o CMakeFiles/TestBench.dir/mbdstharness.cpp.o CMakeFiles/TestBench.dir/ipfilterharness.cpp.o CMakeFiles/TestBench.dir/intrapredharness.cpp.o -o TestBench  ../libx265.a -lpthread -lrt -ldl -lnuma 

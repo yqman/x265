@@ -522,5 +522,18 @@ public:
     void stop();
 };
 } // end namespace X265_NS
+/*
+           Thread
+Reader Scaler PassEncoder FrameEncoder Y4MInput YUVInput  WorkerThread
 
+
+
+
+
+
+
+
+
+
+ */
 #endif // ifndef X265_THREADING_H

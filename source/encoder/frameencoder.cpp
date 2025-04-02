@@ -280,6 +280,9 @@ bool FrameEncoder::startCompressFrame(Frame* curFrame)
 
 void FrameEncoder::threadMain()
 {
+
+    x265_log(NULL, X265_LOG_INFO, " FrameEncoder::threadMain!\n");
+    
     THREAD_NAME("Frame", m_jpId);
 
     if (m_pool)

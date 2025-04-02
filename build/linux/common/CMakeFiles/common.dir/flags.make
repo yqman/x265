@@ -27,7 +27,7 @@ CXX_FLAGS = -g   -Wall -Wextra -Wshadow -Wno-class-memaccess -std=gnu++98 -fPIC 
 
 # Custom flags: common/CMakeFiles/common.dir/cpu.cpp.o_FLAGS = -Wno-narrowing
 
-# Custom flags: common/CMakeFiles/common.dir/version.cpp.o_FLAGS = -DX265_VERSION=3.4+33-50fb8f567 -DENABLE_ASSEMBLY=1
+# Custom flags: common/CMakeFiles/common.dir/version.cpp.o_FLAGS = -DX265_VERSION=unknown -DENABLE_ASSEMBLY=1
 
 # Custom flags: common/CMakeFiles/common.dir/threading.cpp.o_FLAGS = -DENABLE_ASSEMBLY=1
 

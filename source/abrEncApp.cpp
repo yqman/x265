@@ -497,6 +497,8 @@ ret:
 
     void PassEncoder::threadMain()
     {
+    
+        x265_log(NULL, X265_LOG_INFO, "PassEncoder::threadMain!\n");
         THREAD_NAME("PassEncoder", m_id);
 
         while (m_threadActive)
@@ -937,6 +939,8 @@ ret:
 
     void Scaler::threadMain()
     {
+
+        x265_log(NULL, X265_LOG_INFO, "enter Scaler::threadMain!\n");
         THREAD_NAME("Scaler", m_id);
 
         /* unscaled picture is stored in the last index */
@@ -1050,6 +1054,8 @@ ret:
 
     void Reader::threadMain()
     {
+        
+        x265_log(NULL, X265_LOG_INFO, "Reader::threadMain!\n");
         THREAD_NAME("Reader", m_id);
 
         int QDepth = m_parentEnc->m_parent->m_queueSize;
