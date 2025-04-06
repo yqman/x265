@@ -429,6 +429,7 @@ void FrameEncoder::writeTrailingSEIMessages()
 
 void FrameEncoder::compressFrame()
 {
+    x265_log(NULL, X265_LOG_INFO, "FrameEncoder::compressFrame\n");
     ProfileScopeEvent(frameThread);
 
     m_startCompressTime = x265_mdate();

@@ -47,6 +47,7 @@ namespace X265_NS {
 
     AbrEncoder::AbrEncoder(CLIOptions cliopt[], uint8_t numEncodes, int &ret)
     {
+        x265_log(NULL, X265_LOG_INFO, "AbrEncoder::AbrEncoder\n");
         m_numEncodes = numEncodes;
         m_numActiveEncodes.set(numEncodes);
         m_queueSize = (numEncodes > 1) ? X265_INPUT_QUEUE_SIZE : 1;
@@ -71,7 +72,10 @@ namespace X265_NS {
 
         /* start passEncoder worker threads */
         for (uint8_t pass = 0; pass < m_numEncodes; pass++)
+        {
+            x265_log(NULL, X265_LOG_INFO, "AbrEncoder::AbrEncoder StartThreads\n");
             m_passEnc[pass]->startThreads();
+        }
     }
 
     bool AbrEncoder::allocBuffers()
@@ -161,6 +165,8 @@ namespace X265_NS {
 
     int PassEncoder::init(int &result)
     {
+
+        x265_log(NULL, X265_LOG_INFO, "PassEncoder::init()\n");
         if (m_parent->m_numEncodes > 1)
             setReuseLevel();
                 
@@ -392,6 +398,8 @@ ret:
 
     bool PassEncoder::readPicture(x265_picture *dstPic)
     {
+
+        x265_log(NULL, X265_LOG_INFO, "PassEncoder::readPicture!\n");
         /*Check and wait if there any input frames to read*/
         int ipread = m_parent->m_picReadCnt[m_id].get();
         int ipwrite = m_parent->m_picWriteCnt[m_id].get();
@@ -1064,6 +1072,8 @@ ret:
 
         while (m_threadActive)
         {
+            
+            x265_log(NULL, X265_LOG_INFO, "Reader::threadMain! m_threadActive\n");
             uint32_t written = m_parentEnc->m_parent->m_picWriteCnt[m_id].get();
             uint32_t writeIdx = written % QDepth;
             uint32_t read = m_parentEnc->m_parent->m_picIdxReadCnt[m_id][writeIdx].get();
@@ -1080,6 +1090,8 @@ ret:
             x265_picture* dest = m_parentEnc->m_parent->m_inputPicBuffer[m_id][writeIdx];
             if (m_input->readPicture(*src))
             {
+
+                //x265_log(NULL, X265_LOG_INFO, "Reader::threadMain! m_threadActive m_input->readpicture\n");
                 dest->poc = src->poc;
                 dest->pts = src->pts;
                 dest->userSEI = src->userSEI;

@@ -157,6 +157,8 @@ inline char *strcatFilename(const char *input, const char *suffix)
 
 void Encoder::create()
 {
+
+    x265_log(NULL, X265_LOG_INFO, "encoder::create()\n");
     if (!primitives.pu[0].sad)
     {
         // this should be an impossible condition when using our public API, and indicates a serious bug.

@@ -75,6 +75,8 @@ static const char* summaryCSVHeader =
     "B count, B ave-QP, B kbps, B-PSNR Y, B-PSNR U, B-PSNR V, B-SSIM (dB), ";
 x265_encoder *x265_encoder_open(x265_param *p)
 {
+
+    x265_log(NULL, X265_LOG_INFO, "x265_encoder_open()\n");
     if (!p)
         return NULL;
 
@@ -409,6 +411,8 @@ int x265_encoder_reconfig_zone(x265_encoder* enc, x265_zone* zone_in)
 
 int x265_encoder_encode(x265_encoder *enc, x265_nal **pp_nal, uint32_t *pi_nal, x265_picture *pic_in, x265_picture *pic_out)
 {
+
+    x265_log(NULL, X265_LOG_INFO, "x265_encoder_encode\n");
     if (!enc)
         return -1;
 

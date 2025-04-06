@@ -318,6 +318,8 @@ void Y4MInput::startReader()
 
 void Y4MInput::threadMain()
 {
+
+    x265_log(NULL, X265_LOG_INFO, "Y4MInput::threadMain!\n");
     THREAD_NAME("Y4MRead", 0);
     do
     {
@@ -331,6 +333,8 @@ void Y4MInput::threadMain()
 }
 bool Y4MInput::populateFrameQueue()
 {
+
+    //x265_log(NULL, X265_LOG_INFO, "Y4MInput::populateFrameQueue\n");
     if (!ifs || ferror(ifs))
         return false;
     /* strip off the FRAME\n header */
@@ -367,6 +371,8 @@ bool Y4MInput::populateFrameQueue()
 
 bool Y4MInput::readPicture(x265_picture& pic)
 {
+
+    x265_log(NULL, X265_LOG_INFO, "Y4MInput::readPicture\n");
     int read = readCount.get();
     int written = writeCount.get();
 
