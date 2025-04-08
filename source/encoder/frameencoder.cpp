@@ -494,7 +494,7 @@ void FrameEncoder::compressFrame()
                 x265_log(m_param, X265_LOG_ERROR, "compute commonly RPS failed!\n");
                 m_top->m_aborted = true;
             }
-            m_top->getStreamHeaders(m_nalList, m_entropyCoder, m_bs);
+            m_top->getStreamHeaders(m_nalList, m_entropyCoder, m_bs);//Encoder m_top;
         }
         else
             m_top->getStreamHeaders(m_nalList, m_entropyCoder, m_bs);
@@ -637,7 +637,7 @@ void FrameEncoder::compressFrame()
     m_entropyCoder.load(m_initSliceContext);
     for (uint32_t sliceId = 0; sliceId < m_param->maxSlices; sliceId++)   
         for (uint32_t row = m_sliceBaseRow[sliceId]; row < m_sliceBaseRow[sliceId + 1]; row++)
-            m_rows[row].init(m_initSliceContext, sliceId);   
+            m_rows[row].init(m_initSliceContext, sliceId);   //CTURow* m_rows
 
     // reset slice counter for rate control update
     m_sliceCnt = 0;
@@ -668,7 +668,7 @@ void FrameEncoder::compressFrame()
         }
     }
 
-    m_rce.encodeOrder = m_frame->m_encodeOrder;
+    m_rce.encodeOrder = m_frame->m_encodeOrder;//RateControlEntry m_rce;
     int prevBPSEI = m_rce.encodeOrder ? m_top->m_lastBPSEI : 0;
 
     if (m_frame->m_lowres.bKeyframe)
@@ -959,7 +959,7 @@ void FrameEncoder::compressFrame()
     {
         for (uint32_t i = 0; i < m_numRows; i++)
         {
-            m_frame->m_encData->m_frameStats.cntIntraNxN += m_rows[i].rowStats.cntIntraNxN;
+            m_frame->m_encData->m_frameStats.cntIntraNxN += m_rows[i].rowStats.cntIntraNxN;//CTURow* m_rows;
             m_frame->m_encData->m_frameStats.totalCu += m_rows[i].rowStats.totalCu;
             m_frame->m_encData->m_frameStats.totalCtu += m_rows[i].rowStats.totalCtu;
             m_frame->m_encData->m_frameStats.lumaDistortion += m_rows[i].rowStats.lumaDistortion;
@@ -1343,6 +1343,8 @@ void FrameEncoder::processRow(int row, int threadId)
 // Called by worker threads
 void FrameEncoder::processRowEncoder(int intRow, ThreadLocalData& tld)
 {
+
+    x265_log(m_param, X265_LOG_INFO,"FrameEncoder::processRowEncoder\n");
     const uint32_t row = (uint32_t)intRow;
     CTURow& curRow = m_rows[row];
 

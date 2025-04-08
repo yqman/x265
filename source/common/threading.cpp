@@ -126,6 +126,8 @@ Thread::~Thread()
 static void *ThreadShim(void *opaque)
 {
     // defer processing to the virtual function implemented in the derived class
+
+    x265_log(NULL, X265_LOG_INFO, "Thread::ThreadShim\n");
     Thread *instance = reinterpret_cast<Thread *>(opaque);
 
     STACK_ALIGN(stackAlignMain, instance);
