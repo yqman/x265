@@ -307,7 +307,7 @@ void FrameEncoder::threadMain()
 
             for (int i = 0; i < m_pool->m_numProviders; i++)
             {
-                if (m_pool->m_jpTable[i]->m_isFrameEncoder) /* ugh; over-allocation and other issues here */
+                if (m_pool->m_jpTable[i]->m_isFrameEncoder) /* ugh; over-allocation and other issues here *///jobProvider** m_jpTable
                 {
                     FrameEncoder *peer = dynamic_cast<FrameEncoder*>(m_pool->m_jpTable[i]);
                     peer->m_tld = m_tld;
@@ -329,7 +329,7 @@ void FrameEncoder::threadMain()
     }
 
     m_done.trigger();     /* signal that thread is initialized */
-    m_enable.wait();      /* Encoder::encode() triggers this event */
+    m_enable.wait();      /* Encoder::encode() triggers this event *///Event m_enable,m_done;
 
     while (m_threadActive)
     {
