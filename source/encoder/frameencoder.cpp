@@ -856,7 +856,7 @@ void FrameEncoder::compressFrame()
                 {
                     for (int ref = 0; ref < slice->m_numRefIdx[l]; ref++)
                     {
-                        Frame *refpic = slice->m_refFrameList[l][ref];
+                        Frame *refpic = slice->m_refFrameList[l][ref];//.................................................................//
 
                         // NOTE: we unnecessary wait row that beyond current slice boundary
                         const int rowIdx = X265_MIN(sliceEndRow, (row + m_refLagRows));
