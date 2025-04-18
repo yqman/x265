@@ -113,6 +113,8 @@ public:
     /* return the difference in energy between the source block and the recon block */
     inline int psyCost(int size, const pixel* source, intptr_t sstride, const pixel* recon, intptr_t rstride) const
     {
+        
+      //  x265_log(NULL, X265_LOG_INFO, " psyCost!\n");
         return primitives.cu[size].psy_cost_pp(source, sstride, recon, rstride);
     }
 

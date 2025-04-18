@@ -170,7 +170,7 @@ Mode& Analysis::compressCTU(CUData& ctu, Frame& frame, const CUGeom& cuGeom, con
         {
             uint8_t depth = (uint8_t)ctuTemp->ctuPartitions[depthIdx];
             uint8_t content = (uint8_t)(*((int32_t *)ctuTemp->ctuInfo + depthIdx));
-            int prevCtuInfoChange = m_frame->m_prevCtuInfoChange[ctu.m_cuAddr * maxNum8x8Partitions + depthIdx];
+            int prevCtuInfoChange = m_frame->m_prevCtuInfoChange[ctu.m_cuAddr * maxNum8x8Partitions + depthIdx];//int* m_prevCtuInfoChange;
             memset(depthInfoPtr, depth, sizeof(uint8_t) * numPartition >> 2 * depth);
             memset(contentInfoPtr, content, sizeof(uint8_t) * numPartition >> 2 * depth);
             memset(prevCtuInfoChangePtr, 0, sizeof(int) * numPartition >> 2 * depth);
@@ -260,6 +260,8 @@ Mode& Analysis::compressCTU(CUData& ctu, Frame& frame, const CUGeom& cuGeom, con
                 memcpy(ctu.m_chromaIntraDir, &intraDataCTU->chromaModes[posCTU], sizeof(uint8_t) * numPartition);
             }
             //Calculate log2CUSize from depth
+
+
             for (uint32_t i = 0; i < cuGeom.numPartitions; i++)
                 ctu.m_log2CUSize[i] = (uint8_t)m_param->maxLog2CUSize - ctu.m_cuDepth[i];
         }

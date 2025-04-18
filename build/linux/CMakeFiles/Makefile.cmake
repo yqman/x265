@@ -19,6 +19,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/yqman/projects/x265/source/cmake/cmake_uninstall.cmake.in"
   "/home/yqman/projects/x265/source/common/CMakeLists.txt"
   "/home/yqman/projects/x265/source/encoder/CMakeLists.txt"
+  "/home/yqman/projects/x265/source/test/CMakeLists.txt"
   "/home/yqman/projects/x265/source/x265.def.in"
   "/home/yqman/projects/x265/source/x265.pc.in"
   "/home/yqman/projects/x265/source/x265_config.h.in"
@@ -69,6 +70,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "encoder/CMakeFiles/CMakeDirectoryInformation.cmake"
   "common/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "test/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -80,4 +82,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/cli.dir/DependInfo.cmake"
   "encoder/CMakeFiles/encoder.dir/DependInfo.cmake"
   "common/CMakeFiles/common.dir/DependInfo.cmake"
+  "test/CMakeFiles/TestBench.dir/DependInfo.cmake"
   )

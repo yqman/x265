@@ -113,6 +113,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/yqman/projects/x265/build/linux/encoder/cmake_install.cmake")
   include("/home/yqman/projects/x265/build/linux/common/cmake_install.cmake")
+  include("/home/yqman/projects/x265/build/linux/test/cmake_install.cmake")
 
 endif()
 

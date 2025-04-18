@@ -23,3 +23,10 @@
 /home/yqman/projects/x265/build/linux/common/CMakeFiles/install.dir
 /home/yqman/projects/x265/build/linux/common/CMakeFiles/install/local.dir
 /home/yqman/projects/x265/build/linux/common/CMakeFiles/install/strip.dir
+/home/yqman/projects/x265/build/linux/test/CMakeFiles/TestBench.dir
+/home/yqman/projects/x265/build/linux/test/CMakeFiles/edit_cache.dir
+/home/yqman/projects/x265/build/linux/test/CMakeFiles/rebuild_cache.dir
+/home/yqman/projects/x265/build/linux/test/CMakeFiles/list_install_components.dir
+/home/yqman/projects/x265/build/linux/test/CMakeFiles/install.dir
+/home/yqman/projects/x265/build/linux/test/CMakeFiles/install/local.dir
+/home/yqman/projects/x265/build/linux/test/CMakeFiles/install/strip.dir

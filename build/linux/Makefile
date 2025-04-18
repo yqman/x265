@@ -252,6 +252,19 @@ common/fast:
 	$(MAKE) $(MAKESILENT) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/build
 .PHONY : common/fast
 
+#=============================================================================
+# Target rules for targets named TestBench
+
+# Build rule for target.
+TestBench: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TestBench
+.PHONY : TestBench
+
+# fast build rule for target.
+TestBench/fast:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/TestBench.dir/build.make test/CMakeFiles/TestBench.dir/build
+.PHONY : TestBench/fast
+
 abrEncApp.o: abrEncApp.cpp.o
 .PHONY : abrEncApp.o
 
@@ -530,6 +543,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... clean-generated"
 	@echo "... uninstall"
+	@echo "... TestBench"
 	@echo "... cli"
 	@echo "... common"
 	@echo "... encoder"
